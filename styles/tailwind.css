@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    @apply min-h-screen min-w-max;
+    scroll-behavior: smooth;
+}
+
+.blog-article {
+    @apply text-gray-700 text-lg leading-8 tracking-wide;
+}
+
+article a {
+    @apply ease-in-out duration-300 text-emerald-400 font-semibold hover:underline;
+}
+
+article img {
+    @apply rounded-lg mx-auto;
+}
+
+article.blog-post :not(pre)>code {
+    @apply p-1 text-gray-700 rounded-lg bg-emerald-400 bg-opacity-20 ;
+}
+
+
+.blog-article p {
+    @apply mb-4;
+}
+.blog-article hr {
+    @apply border-2;
+}
+
+.blog-article h2 {
+    @apply text-emerald-400 text-3xl font-extrabold my-6;
+}
