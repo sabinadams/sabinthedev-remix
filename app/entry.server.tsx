@@ -4,6 +4,9 @@ import type { EntryContext } from "remix";
 import nodemailer from 'nodemailer';
 
 export const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.CONTACT_EMAIL,
     pass: process.env.CONTACT_PASSWORD
