@@ -1,7 +1,6 @@
 import { FC, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import useSamePageNavigation from '~/hooks/useSamePageNavigation'
-
 import {
     Github,
     Hashnode,

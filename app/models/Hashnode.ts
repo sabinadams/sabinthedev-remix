@@ -31,3 +31,14 @@ export interface PreviewResponse {
     total: number;
     posts: BlogPostPreview[]
 }
+
+export interface HashnodeProfile {
+    user: {
+        socialMedia: {
+            twitter: string
+        },
+        photo: string
+        tagline: string
+        name: string;
+    }
+}

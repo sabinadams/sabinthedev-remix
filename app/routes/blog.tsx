@@ -1,8 +1,8 @@
-import BlogLayout from '~/components/BlogLayout'
 import { MetaFunction } from 'remix'
+import { useState } from 'react';
+import BlogLayout from '~/components/BlogLayout'
 import { BlogListing } from '~/components/BlogListing'
 import useHashnodeArticles from '~/hooks/useHashnodeArticlePreviews';
-import { useState } from 'react';
 
 export const meta: MetaFunction = () => {
   return {

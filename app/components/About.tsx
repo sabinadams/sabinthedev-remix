@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import arrowForwardThickFill from '@iconify/icons-akar-icons/arrow-forward-thick-fill'
+
 import useSamePageNavigation from '~/hooks/useSamePageNavigation'
 
 export default function About() {

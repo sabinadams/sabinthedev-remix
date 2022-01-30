@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request'
-import { PreviewAPIResponse, PreviewResponse, BlogPost, PostResponse } from '~/models/Hashnode'
+import { PreviewAPIResponse, PreviewResponse, BlogPost, PostResponse, HashnodeProfile } from '~/models/Hashnode'
 
 export async function getPostPreviews(page: number = 1): Promise<PreviewResponse> {
     const GetPostsQuery = gql`
@@ -41,4 +41,25 @@ export async function getPost(slug: string): Promise<BlogPost> {
     const { post } = await graphcms.request<PostResponse>(GetPostQuery, { slug, hostname: 'https://sabinadams.hashnode.dev' })
     
     return post
+}
+
+export async function getHashnodeProfileData(): Promise<HashnodeProfile['user']> {
+    const GetProfileQuery = gql`
+        query($username: String!) {
+            user(username: $username) {
+                socialMedia {
+                    twitter
+                }
+                photo
+                tagline
+                name
+            }
+        }
+    `
+    
+    const graphcms = new GraphQLClient('https://api.hashnode.com/')
+    const { user } = await graphcms.request<HashnodeProfile>(GetProfileQuery, { username: 'sabinadams' })
+    
+    return user
+
 }
