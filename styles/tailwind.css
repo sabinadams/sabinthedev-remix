@@ -8,10 +8,10 @@ html, body {
 }
 
 .blog-article {
-    @apply text-gray-700 text-lg leading-8 tracking-wide;
+    @apply text-gray-700 dark:text-gray-300 text-lg leading-8 tracking-wide;
 }
 
-article a {
+article a, .blog-article a {
     @apply ease-in-out duration-300 text-emerald-400 font-semibold hover:underline;
 }
 
@@ -20,9 +20,16 @@ article img {
 }
 
 article.blog-post :not(pre)>code {
-    @apply p-1 text-gray-700 rounded-lg bg-emerald-400 bg-opacity-20 ;
+    @apply p-1 text-gray-700 dark:text-gray-300 rounded-lg bg-emerald-400 bg-opacity-20 ;
 }
 
+
+.blog-article blockquote {
+    @apply dark:text-gray-500
+}
+.blog-article p>strong {
+    @apply dark:text-emerald-300
+}
 
 .blog-article p {
     @apply mb-4;
@@ -33,4 +40,8 @@ article.blog-post :not(pre)>code {
 
 .blog-article h2 {
     @apply text-emerald-400 text-3xl font-extrabold my-6;
+}
+
+.blog-article h3 {
+    @apply dark:text-cyan-800
 }

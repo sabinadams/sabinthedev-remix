@@ -9,6 +9,7 @@ import {
 import type { MetaFunction, LinksFunction } from "remix";
 import tailwindStyles from "./tailwind.css"
 import prismStyles from './styles/prism-material-oceanic.min.css'
+import { useEffect } from "react";
 
 export let links: LinksFunction = () => {
   return [
@@ -24,6 +25,19 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    if (
+      localStorage.getItem('sabinthedev-theme') === 'dark' ||
+      (!('sabinthedev-theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      localStorage.setItem('sabinthedev-theme', 'dark')
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [])
+  
   return (
     <html lang="en">
       <head>

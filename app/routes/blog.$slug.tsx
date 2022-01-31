@@ -1,5 +1,5 @@
 import { MetaFunction, json, LoaderFunction, useLoaderData } from 'remix'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import BlogLayout from '~/components/BlogLayout'
 import Bio from '~/components/Bio'
 import { getPost } from '~/services/hashnode.service'
@@ -34,8 +34,8 @@ export default function Blog() {
       >
         <header className="text-left">
           <img src={post.coverImage} />
-          <h1 itemProp="headline" className="text-4xl font-bold text-blue-900 my-4">{post.title}</h1>
-          <p>{moment.utc(post.addedDate).format('MMM DDD, YYYY')}</p>
+          <h1 itemProp="headline" className="text-4xl font-bold text-blue-900 dark:text-emerald-300 my-4">{post.title}</h1>
+          <p className="dark:text-gray-500">{moment.utc(post.addedDate).format('MMM DDD, YYYY')}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.content }}

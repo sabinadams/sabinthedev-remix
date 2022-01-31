@@ -1,6 +1,7 @@
 module.exports = {
   mode: "jit",
   content: ["./app/**/*.{ts,tsx}"],
+  darkMode: 'class',
   theme: {
     fontFamily: {
       PermanentMarker: ["Permanent Marker"],
@@ -16,6 +17,8 @@ module.exports = {
         "-45/2": "-22.5deg",
       },
       dropShadow: {
+        "dark-blue-solid-10": "-0.66rem 0.66rem 0px #172757",
+        "dark-blue-solid-5": "-0.33rem 0.33rem 0px rgba(0, 0, 0, 0.25)",
         "dark-blue-solid-10": "-0.66rem 0.66rem 0px #172757",
         "dark-blue-solid-5": "-0.33rem 0.33rem 0px rgba(0, 0, 0, 0.25)",
       },

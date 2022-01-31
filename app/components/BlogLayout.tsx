@@ -11,14 +11,14 @@ const BlogLayout: FC = ({ children }) => {
   const smoothScrollToTop = () => {
     document.getElementById('blogLayout')?.scrollTo({ behavior: 'smooth', top: 0 })
   }
-  return <div id="blogLayout" className="h-screen w-screen overflow-x-hidden relative flex flex-col pb-10" onScroll={listenToScroll}>
+  return <div id="blogLayout" className="h-screen w-screen overflow-x-hidden relative flex flex-col pb-10 dark:bg-gray-800" onScroll={listenToScroll}>
       <div id="top"></div>
       <Navbar/>
       <main className="flex-1">{children}</main>
       {
         isVisible && location.pathname != '/blog' ? (
-          <div onClick={smoothScrollToTop} className={`fixed flex flex-col justify-center items-middle rounded-full hover:drop-shadow-dark-blue-solid-5 hover:bottom-12 drop-shadow-none transition-all duration-300 ease-in-out bottom-10 right-10 h-14 w-14 bg-blue-800`}>
-              <Icon icon={arrowUp} className='font-extrabold text-white w-full h-1/2 cursor-pointer'/>
+          <div onClick={smoothScrollToTop} className={`fixed flex flex-col justify-center items-middle rounded-full hover:drop-shadow-dark-blue-solid-5 hover:bottom-12 drop-shadow-none transition-all duration-300 ease-in-out bottom-10 right-10 h-14 w-14 bg-blue-800 dark:bg-emerald-300`}>
+              <Icon icon={arrowUp} className='font-extrabold text-white dark:text-gray-800 w-full h-1/2 cursor-pointer'/>
           </div>
         ) : null
       }
