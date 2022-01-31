@@ -10,14 +10,24 @@ import microsoftsqlserverIcon from '@iconify/icons-simple-icons/microsoftsqlserv
 import fileTypeMongo from '@iconify/icons-vscode-icons/file-type-mongo';
 import sassIcon from '@iconify/icons-logos/sass';
 import coldfusionIcon from '@iconify/icons-file-icons/coldfusion';
+import graphql from '@iconify/icons-logos/graphql'
+import prisma from '@iconify/icons-logos/prisma'
+import nestjs from '@iconify/icons-logos/nestjs'
+import remix from '@iconify/icons-logos/remix'
+import postgres from '@iconify/icons-logos/postgresql'
 
 export default function Skills() {
     const skills = {
+        'Prisma': prisma,
         'React': reactIcon,
-        'Vue': vueIcon,
-        'Angular': angularIcon,
+        'GraphQL': graphql,
+        'NestJS': nestjs,
         'Gatsby': gatsbyIcon,
         'Tailwind': tailwindcssIcon,
+        'Postgres': postgres,
+        'Vue': vueIcon,
+        'Angular': angularIcon,
+        'Remix': remix,
         'NodeJS': nodejsIcon,
         'AWS': awsIcon,
         'MSSQL': microsoftsqlserverIcon,
