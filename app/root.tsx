@@ -24,7 +24,14 @@ export const meta: MetaFunction = () => {
   return {
     title: 'SabinTheDev',
     description: 'Come check out what I\'m working on and writing about! Maybe learn a thing or two!',
-    keywords: "TypeScript,React,Programming,Coding,Web Development,Software Development,JavaScript"
+    keywords: "TypeScript,React,Programming,Coding,Web Development,Software Development,JavaScript",
+    image: "https://res.cloudinary.com/sabinthedev/image/upload/v1643624812/Adams_1_utznj8.png",
+    "twitter:image": "https://res.cloudinary.com/sabinthedev/image/upload/v1643624812/Adams_1_utznj8.png",
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@sabinthedev",
+    "twitter:site": "@sabinthedev",
+    "twitter:title": "SabinTheDev",
+    "twitter:description": "A blog written from a real-world developer, for ${ yourName }!"
   };
 };
 

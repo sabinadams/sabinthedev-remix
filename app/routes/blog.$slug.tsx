@@ -6,20 +6,18 @@ import { getPost } from '~/services/hashnode.service'
 import moment from 'moment'
 import { BlogPost } from '~/models/Hashnode'
 
-export const meta: MetaFunction = ({
-  data
-}: { data: BlogPost | undefined}) => {
-  if ( !data ) {
+export const meta: MetaFunction = ({ data }: { data: BlogPost }) => {
     return {
-      title: 'Blog Posts',
-      description: `Sabin Adams's Blog Posts`
+      image: data?.coverImage,
+      title: data?.title,
+      description: data?.brief,
+      "twitter:image": data?.coverImage,
+      "twitter:card": "summary_large_image",
+      "twitter:creator": "@sabinthedev",
+      "twitter:site": "@sabinthedev",
+      "twitter:title": data?.title,
+      "twitter:description": data?.brief
     }
-  } else {
-    return {
-      title: data.title,
-      description: data.brief
-    }
-  }
 }
 
 export let loader: LoaderFunction = async ({ params }) => {
