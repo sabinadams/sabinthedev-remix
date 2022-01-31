@@ -42,8 +42,8 @@ export default function Blog() {
           itemProp="articleBody"
         />
       </article>
-      <hr className="mb-4"/>
-      <Bio />
+      <hr className="mb-10"/>
+      <Bio/>
     </BlogLayout>
   )
 }
