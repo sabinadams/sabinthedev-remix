@@ -31,6 +31,7 @@ export async function getPost(slug: string): Promise<BlogPost> {
             post(slug: $slug, hostname: $hostname) {
                 title
                 dateAdded
+                brief
                 coverImage
                 content
             }

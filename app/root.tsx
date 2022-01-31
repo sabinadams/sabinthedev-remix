@@ -21,7 +21,11 @@ export let links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  return { title: "SabinTheDev" };
+  return {
+    title: 'SabinTheDev',
+    description: 'Come check out what I\'m working on and writing about! Maybe learn a thing or two!',
+    keywords: "TypeScript,React,Programming,Coding,Web Development,Software Development,JavaScript"
+  };
 };
 
 export default function App() {
@@ -37,7 +41,7 @@ export default function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [])
-  
+
   return (
     <html lang="en">
       <head>
@@ -50,8 +54,8 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js" data-manual/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js" data-manual />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js" />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>

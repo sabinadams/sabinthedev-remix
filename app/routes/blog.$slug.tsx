@@ -4,11 +4,21 @@ import BlogLayout from '~/components/BlogLayout'
 import Bio from '~/components/Bio'
 import { getPost } from '~/services/hashnode.service'
 import moment from 'moment'
+import { BlogPost } from '~/models/Hashnode'
 
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Blog Posts',
-    description: `Sabin Adams's Blog Posts`
+export const meta: MetaFunction = ({
+  data
+}: { data: BlogPost | undefined}) => {
+  if ( !data ) {
+    return {
+      title: 'Blog Posts',
+      description: `Sabin Adams's Blog Posts`
+    }
+  } else {
+    return {
+      title: data.title,
+      description: data.brief
+    }
   }
 }
 
