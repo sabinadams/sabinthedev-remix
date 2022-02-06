@@ -12,6 +12,9 @@
   to = "/.netlify/functions/server"
   status = 200
 
+[functions."hashnode-data-fetcher"]
+  schedule = "@hourly"
+
 [[headers]]
   for = "/build/*"
   [headers.values]

@@ -1,9 +1,5 @@
-const { schedule } = require("@netlify/functions");
 const { GraphQLClient, gql } = require("graphql-request");
 const { PrismaClient } = require("@prisma/client");
-
-// Get the Prisma Client
-const prisma = new PrismaClient();
 
 // Query for post preview data
 const GetPostPreviewsQuery = gql`
@@ -45,7 +41,7 @@ const getPostContent = async (slug) => {
 };
 
 // Function to grab a page of posts
-const getPostPreviews = async (page) => {
+const getPosts = async (page) => {
   const graphcms = new GraphQLClient("https://api.hashnode.com/");
   let {
     user: {
@@ -66,56 +62,63 @@ const getPostPreviews = async (page) => {
       };
     })
   );
+
   return { posts, total: numPosts };
 };
 
 const handler = async function (event, context) {
-  let posts = [];
-  let page = 0;
+  // Get the Prisma Client
+  const prisma = new PrismaClient();
+  let posts = [],
+    page = 0,
+    postCount = 0;
 
   try {
-    //   Grab the first set of posts
-    let { posts: newPosts, total } = await getPostPreviews(page);
-    posts = newPosts;
-
     // While we haven't grabbed all the posts, keep getting more
     do {
-      page++;
-      let { posts: newPosts } = await getPostPreviews(page);
+      let { posts: newPosts, total } = await getPosts(page);
       posts = [...posts, ...newPosts];
-    } while (posts.length < total);
+      postCount = total;
+      page++;
+    } while (posts.length < postCount);
 
-    //   Build out our upserts
-    await Promise.all(
-      posts.map(async (post) => {
+    // Build out our upserts
+    const actions = posts.map(
+      ({ _id, title, brief, slug, dateAdded, coverImage, content }) => {
         const postData = {
-          title: post.title,
-          brief: post.brief,
-          slug: post.slug,
-          dateAdded: post.dateAdded,
-          coverImage: post.coverImage,
-          content: post.content,
+          title,
+          brief,
+          slug,
+          dateAdded,
+          coverImage,
+          content,
         };
 
-        await prisma.hashnodePost.upsert({
+        return prisma.hashnodePost.upsert({
           where: {
-            id: post._id,
+            id: _id,
           },
           update: postData,
           create: postData,
         });
-      })
+      }
     );
 
+    // Run our actions
+    await prisma.$transaction(actions);
+
+    // Shut prisma off
+    await prisma.$disconnect()
+    
     return {
       statusCode: 200,
     };
   } catch (e) {
-    console.error(e.message)
+    console.error(e.message);
     return {
       statusCode: 500,
     };
   }
 };
 
-module.exports.handler = schedule('@hourly', handler);
+module.exports.handler = handler;
