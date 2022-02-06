@@ -1,5 +1,6 @@
 const { GraphQLClient, gql } = require("graphql-request");
 const { PrismaClient } = require("@prisma/client");
+const axios = require('axios')
 
 // Query for post preview data
 const GetPostPreviewsQuery = gql`
@@ -66,21 +67,17 @@ const getPosts = async (page) => {
   return { posts, total: numPosts };
 };
 
-const handler = async function (event, context) {
-  // Get the Prisma Client
-  const prisma = new PrismaClient();
-  let posts = [],
-    page = 0,
-    postCount = 0;
+// Get the Prisma Client
+const prisma = new PrismaClient();
 
+const handler = async function (event, context) {
   try {
-    // While we haven't grabbed all the posts, keep getting more
-    do {
-      let { posts: newPosts, total } = await getPosts(page);
-      posts = [...posts, ...newPosts];
-      postCount = total;
-      page++;
-    } while (posts.length < postCount);
+    let page = !event.queryStringParameters.page
+      ? 0
+      : Number(event.queryStringParameters.page);
+    console.log('Getting page ' + page)
+
+    let { posts, total } = await getPosts(page);
 
     // Build out our upserts
     const actions = posts.map(
@@ -92,11 +89,12 @@ const handler = async function (event, context) {
           dateAdded,
           coverImage,
           content,
+          hashnodeId: _id.toString(),
         };
 
         return prisma.hashnodePost.upsert({
           where: {
-            id: _id,
+            hashnodeId: _id,
           },
           update: postData,
           create: postData,
@@ -108,8 +106,13 @@ const handler = async function (event, context) {
     await prisma.$transaction(actions);
 
     // Shut prisma off
-    await prisma.$disconnect()
-    
+    await prisma.$disconnect();
+
+    if ( posts.length != 0 ) {
+        page += 1
+        axios.get(`${process.env.URL}/.netlify/functions/hashnode-data-fetcher?page=${page}`)
+    }
+
     return {
       statusCode: 200,
     };
