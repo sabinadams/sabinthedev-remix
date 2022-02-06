@@ -9,3 +9,6 @@ public/build
 api/_build
 
 /app/tailwind.css
+
+# Local Netlify folder
+.netlify
