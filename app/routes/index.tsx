@@ -18,7 +18,7 @@ export default function Index() {
       {/* Contact Me */}
       <Contact />
       {/* Footer */}
-      <p className="w-full text-center dark:text-gray-300 text-gray-800">Made with ❤️, hosted on <a className="font-bold text-gray-800 dark:text-gray-900 hover:underline" href="https://www.vercel.com/" rel="noreferrer" target="_blank">Vercel</a></p>
+      <p className="w-full text-center dark:text-gray-300 text-gray-800">Made with ❤️, hosted on <a className="font-bold text-gray-800 dark:text-gray-900 hover:underline" href="https://www.netlify.com/" rel="noreferrer" target="_blank">Netlify</a></p>
     </Layout>
   );
 }

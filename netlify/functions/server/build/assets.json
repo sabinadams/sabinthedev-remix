@@ -1,5 +1,5 @@
 {
-  "version": "8e3caf85",
+  "version": "e2a7699e",
   "entry": {
     "module": "/build/entry.client-VLOL257M.js",
     "imports": [
@@ -105,7 +105,7 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-GGTKD4EP.js",
+      "module": "/build/routes/index-LMRFEQIB.js",
       "imports": [
         "/build/_shared/chunk-M522BAWV.js"
       ],
@@ -115,5 +115,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-8E3CAF85.js"
+  "url": "/build/manifest-E2A7699E.js"
 }

@@ -1263,10 +1263,10 @@ function Index() {
     className: "w-full text-center dark:text-gray-300 text-gray-800"
   }, "Made with \u2764\uFE0F, hosted on ", /* @__PURE__ */ React.createElement("a", {
     className: "font-bold text-gray-800 dark:text-gray-900 hover:underline",
-    href: "https://www.vercel.com/",
+    href: "https://www.netlify.com/",
     rel: "noreferrer",
     target: "_blank"
-  }, "Vercel")));
+  }, "Netlify")));
 }
 
 // route-module:/Users/sabinadams/Documents/projects/sabinthedev-remix/app/routes/blog.tsx
