@@ -1,12 +1,11 @@
 const { GraphQLClient, gql } = require("graphql-request");
 const { PrismaClient } = require("@prisma/client");
-const axios = require('axios')
+const axios = require("axios");
 
 // Query for post preview data
 const GetPostPreviewsQuery = gql`
   query GetUserArticles($page: Int, $username: String!) {
     user(username: $username) {
-      numPosts
       publication {
         posts(page: $page) {
           _id
@@ -64,20 +63,21 @@ const getPosts = async (page) => {
     })
   );
 
-  return { posts, total: numPosts };
+  return posts;
 };
-
-// Get the Prisma Client
-const prisma = new PrismaClient();
 
 const handler = async function (event, context) {
   try {
+    // Get the Prisma Client
+    const prisma = new PrismaClient();
+
     let page = !event.queryStringParameters.page
       ? 0
       : Number(event.queryStringParameters.page);
-    console.log('Getting page ' + page)
+    
+    console.log("Getting page " + page);
 
-    let { posts, total } = await getPosts(page);
+    let posts = await getPosts(page);
 
     // Build out our upserts
     const actions = posts.map(
@@ -108,9 +108,11 @@ const handler = async function (event, context) {
     // Shut prisma off
     await prisma.$disconnect();
 
-    if ( posts.length != 0 ) {
-        page += 1
-        axios.get(`${process.env.URL}/.netlify/functions/hashnode-data-fetcher?page=${page}`)
+    if (posts.length != 0) {
+      page += 1;
+      axios.get(
+        `${process.env.URL}/.netlify/functions/hashnode-data-fetcher?page=${page}`
+      );
     }
 
     return {
