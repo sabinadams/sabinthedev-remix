@@ -3,7 +3,6 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
   binaryTargets   = ["native", "rhel-openssl-1.0.x"]
 }
 
@@ -13,7 +12,7 @@ datasource db {
 }
 
 model HashnodePost {
-  id         String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
   hashnodeId String @unique
   title      String
   brief      String

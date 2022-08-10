@@ -43,7 +43,7 @@ export default function Blog() {
         <header className="text-left">
           <img src={post.coverImage} />
           <h1 itemProp="headline" className="text-4xl font-bold text-blue-900 dark:text-emerald-300 my-4">{post.title}</h1>
-          <p className="dark:text-gray-500">{moment.utc(post.addedDate).format('MMM DDD, YYYY')}</p>
+          <p className="dark:text-gray-500">{moment.utc(post.addedDate).format('MMM Do YYYY')}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.content }}

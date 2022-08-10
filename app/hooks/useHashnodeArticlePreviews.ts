@@ -34,7 +34,8 @@ export default function useHashnodeArticles() {
             .then( res => res.json() )
 
         const newSet = [...posts, ...response.posts]
-            .sort( (a,b) => moment(b.dateAdded) < moment(a.dateAdded) ? 1 : 0)
+            .map( post => ({...post, date: new Date(post.dateAdded)}))
+            .sort( (a,b) => moment(b.dateAdded) > moment(a.dateAdded) ? 1 : 0)
         
         if ( newSet.length >= response.total ) {
             setAllBlogsFetched(true)
