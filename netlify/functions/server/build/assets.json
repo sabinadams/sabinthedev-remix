@@ -1,5 +1,5 @@
 {
-  "version": "7ff6cc43",
+  "version": "3e5ddab9",
   "entry": {
     "module": "/build/entry.client-7O2MR7DK.js",
     "imports": [
@@ -47,10 +47,10 @@
       "id": "routes/blog",
       "parentId": "root",
       "path": "blog",
-      "module": "/build/routes/blog-3EUNDRLD.js",
+      "module": "/build/routes/blog-GIWQSV6U.js",
       "imports": [
-        "/build/_shared/chunk-UXBKLGZO.js",
-        "/build/_shared/chunk-2TFD6ZBU.js",
+        "/build/_shared/chunk-TBFDMDT4.js",
+        "/build/_shared/chunk-P4B5GQSC.js",
         "/build/_shared/chunk-H5552UVW.js"
       ],
       "hasAction": false,
@@ -62,12 +62,12 @@
       "id": "routes/blog.$slug",
       "parentId": "root",
       "path": "blog/:slug",
-      "module": "/build/routes/blog.$slug-BOOX7CPL.js",
+      "module": "/build/routes/blog.$slug-MREOIY2T.js",
       "imports": [
-        "/build/_shared/chunk-UXBKLGZO.js",
+        "/build/_shared/chunk-TBFDMDT4.js",
         "/build/_shared/chunk-ULAVR6VE.js",
         "/build/_shared/chunk-UUKVQWR4.js",
-        "/build/_shared/chunk-2TFD6ZBU.js",
+        "/build/_shared/chunk-P4B5GQSC.js",
         "/build/_shared/chunk-H5552UVW.js",
         "/build/_shared/chunk-E24NDWHN.js"
       ],
@@ -108,10 +108,10 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-5FE5MB7V.js",
+      "module": "/build/routes/index-YCDGJLG6.js",
       "imports": [
-        "/build/_shared/chunk-S76NFIK4.js",
-        "/build/_shared/chunk-2TFD6ZBU.js"
+        "/build/_shared/chunk-GDXVY2EQ.js",
+        "/build/_shared/chunk-P4B5GQSC.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -122,10 +122,10 @@
       "id": "routes/speaking",
       "parentId": "root",
       "path": "speaking",
-      "module": "/build/routes/speaking-HFIOD6DE.js",
+      "module": "/build/routes/speaking-CGGR662C.js",
       "imports": [
-        "/build/_shared/chunk-S76NFIK4.js",
-        "/build/_shared/chunk-2TFD6ZBU.js",
+        "/build/_shared/chunk-GDXVY2EQ.js",
+        "/build/_shared/chunk-P4B5GQSC.js",
         "/build/_shared/chunk-H5552UVW.js",
         "/build/_shared/chunk-E24NDWHN.js"
       ],
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-7FF6CC43.js"
+  "url": "/build/manifest-3E5DDAB9.js"
 }

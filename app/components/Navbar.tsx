@@ -83,7 +83,11 @@ export const Navbar: FC = function () {
                             }
                         </div>
                     </div>
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden flex items-center space-x-6">
+                        {
+                            isDark ? <Sun onClick={e => toggleTheme('light')} className={`${effect && 'animate-ping'} w-6 fill-yellow-500`} />
+                                : <Moon onClick={e => toggleTheme('dark')} className={`${effect && 'animate-bounce'} w-6 fill-indigo-800 click`} />
+                        }
                         <button className="mobile-menu-button focus:outline-none" onClick={toggleMobile}>
                             <svg
                                 className="w-6 h-6 text-gray-700"
@@ -99,26 +103,30 @@ export const Navbar: FC = function () {
                         </button>
                     </div>
                 </div>
-                <div className="hidden md:hidden mobile-menu font-semibold p-6 text-gray-700 text-3xl text-center bg-white">
+                <div className="hidden relative md:hidden mobile-menu font-semibold p-6 text-gray-700 dark:text-gray-300 text-3xl text-center bg-white dark:bg-slate-800">
                     <ul>
                         {
                             location.pathname !== '/' ? <>
                                 <li className="mb-4"><Link className="cursor-pointer" to="/">About</Link></li>
-                                <hr className="border-2 border-gray-100 rounded-xl" />
+                                <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-4"><Link className="cursor-pointer" to="/#services">Services</Link></li>
-                                <hr className="border-2 border-gray-100 rounded-xl" />
+                                <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-4"><Link className="cursor-pointer" to="/#contact">Contact</Link></li>
                             </> : <>
                                 <li className="mb-4"><a className="cursor-pointer" onClick={() => scrollToSection('about')}>About</a></li>
-                                <hr className="border-2 border-gray-100 rounded-xl" />
+                                <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-4"><a className="cursor-pointer" onClick={() => scrollToSection('services')}>Services</a></li>
-                                <hr className="border-2 border-gray-100 rounded-xl" />
+                                <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-5"><a className="cursor-pointer" onClick={() => scrollToSection('contact')}>Contact</a></li>
                             </>
                         }
-                        <hr className="border-2 border-gray-100 rounded-xl" />
+                        <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                         <li className="my-4">
                             <Link to="/blog">Blog</Link>
+                        </li>
+                        <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
+                        <li className="my-4">
+                            <Link to="/speaking">Speaking</Link>
                         </li>
                     </ul>
                 </div>
