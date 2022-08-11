@@ -27,10 +27,10 @@ export default function Speaking() {
 
     return (
         <Layout showShape={false}>
-            <div className="m-auto text-center w-2/5">
-                <div className="text-left">
+            <div className="m-auto text-center w-full px-8 md:w-2/4 md:px-0">
+                <div className="md:text-left text-center ">
                     <h2 className="text-gray-700 dark:text-gray-300 text-7xl font-extrabold">Speaking</h2>
-                    <p className="text-gray-700 dark:text-gray-300 text-xl mt-4">Events both online and offline I've spoken at</p>
+                    <p className="text-gray-700 dark:text-gray-300 text-xl mt-4 ">Events both online and offline I've spoken at</p>
                 </div>
                 <br/><br/>
                 <div className="flex flex-col text-left space-y-6">
