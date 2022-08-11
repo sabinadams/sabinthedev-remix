@@ -1,10 +1,10 @@
 {
-  "version": "8c5f3f37",
+  "version": "6602d5c7",
   "entry": {
-    "module": "/build/entry.client-3AP6UTT6.js",
+    "module": "/build/entry.client-7O2MR7DK.js",
     "imports": [
-      "/build/_shared/chunk-FHPOMZN7.js",
-      "/build/_shared/chunk-OABDJYZA.js",
+      "/build/_shared/chunk-TQTCJPEN.js",
+      "/build/_shared/chunk-Y5I6LAOS.js",
       "/build/_shared/chunk-5OQ3QANQ.js"
     ]
   },
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-LG5J6U5R.js",
+      "module": "/build/root-MVIHHFP5.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -32,10 +32,11 @@
       "id": "routes/[sitemap.xml]",
       "parentId": "root",
       "path": "sitemap.xml",
-      "module": "/build/routes/[sitemap.xml]-W4GGX54O.js",
+      "module": "/build/routes/[sitemap.xml]-WA2GKGBG.js",
       "imports": [
+        "/build/_shared/chunk-ULAVR6VE.js",
         "/build/_shared/chunk-H5552UVW.js",
-        "/build/_shared/chunk-ANQQXGRR.js"
+        "/build/_shared/chunk-E24NDWHN.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -46,11 +47,11 @@
       "id": "routes/blog",
       "parentId": "root",
       "path": "blog",
-      "module": "/build/routes/blog-4P4NF4BE.js",
+      "module": "/build/routes/blog-3EUNDRLD.js",
       "imports": [
-        "/build/_shared/chunk-G4XJK6BO.js",
-        "/build/_shared/chunk-H5552UVW.js",
-        "/build/_shared/chunk-MP6RQWCT.js"
+        "/build/_shared/chunk-UXBKLGZO.js",
+        "/build/_shared/chunk-2TFD6ZBU.js",
+        "/build/_shared/chunk-H5552UVW.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -61,13 +62,14 @@
       "id": "routes/blog.$slug",
       "parentId": "root",
       "path": "blog/:slug",
-      "module": "/build/routes/blog.$slug-Y2WSQRJ7.js",
+      "module": "/build/routes/blog.$slug-BOOX7CPL.js",
       "imports": [
-        "/build/_shared/chunk-G4XJK6BO.js",
+        "/build/_shared/chunk-UXBKLGZO.js",
+        "/build/_shared/chunk-ULAVR6VE.js",
+        "/build/_shared/chunk-UUKVQWR4.js",
+        "/build/_shared/chunk-2TFD6ZBU.js",
         "/build/_shared/chunk-H5552UVW.js",
-        "/build/_shared/chunk-ANQQXGRR.js",
-        "/build/_shared/chunk-Z2SQOML4.js",
-        "/build/_shared/chunk-MP6RQWCT.js"
+        "/build/_shared/chunk-E24NDWHN.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -78,10 +80,11 @@
       "id": "routes/blog.getpreviews",
       "parentId": "root",
       "path": "blog/getpreviews",
-      "module": "/build/routes/blog.getpreviews-UAC6MP7U.js",
+      "module": "/build/routes/blog.getpreviews-KAADSQN3.js",
       "imports": [
-        "/build/_shared/chunk-ANQQXGRR.js",
-        "/build/_shared/chunk-Z2SQOML4.js"
+        "/build/_shared/chunk-ULAVR6VE.js",
+        "/build/_shared/chunk-UUKVQWR4.js",
+        "/build/_shared/chunk-E24NDWHN.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -92,9 +95,9 @@
       "id": "routes/contact-form",
       "parentId": "root",
       "path": "contact-form",
-      "module": "/build/routes/contact-form-QU5TEIV3.js",
+      "module": "/build/routes/contact-form-TKLBDPU6.js",
       "imports": [
-        "/build/_shared/chunk-Z2SQOML4.js"
+        "/build/_shared/chunk-UUKVQWR4.js"
       ],
       "hasAction": true,
       "hasLoader": false,
@@ -105,9 +108,26 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-OURWJLAY.js",
+      "module": "/build/routes/index-5FE5MB7V.js",
       "imports": [
-        "/build/_shared/chunk-MP6RQWCT.js"
+        "/build/_shared/chunk-S76NFIK4.js",
+        "/build/_shared/chunk-2TFD6ZBU.js"
+      ],
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/speaking": {
+      "id": "routes/speaking",
+      "parentId": "root",
+      "path": "speaking",
+      "module": "/build/routes/speaking-Q3QJ4N5L.js",
+      "imports": [
+        "/build/_shared/chunk-S76NFIK4.js",
+        "/build/_shared/chunk-2TFD6ZBU.js",
+        "/build/_shared/chunk-H5552UVW.js",
+        "/build/_shared/chunk-E24NDWHN.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -115,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-8C5F3F37.js"
+  "url": "/build/manifest-6602D5C7.js"
 }

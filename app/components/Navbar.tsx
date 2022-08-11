@@ -70,8 +70,8 @@ export const Navbar: FC = function () {
                                 </>
                             }
 
-                            <Link to="/blog">Blog</Link>
-
+                            <Link to="/blog">Writing</Link>
+                            <Link to="/speaking">Speaking</Link>
                         </div>
                         <div className="flex justify-end items-center space-x-4">
                             <a href="https://twitter.com/sabinthedev" rel="noreferrer" target="_blank"><Twitter className="w-6 dark:fill-gray-300" /></a>
@@ -79,7 +79,7 @@ export const Navbar: FC = function () {
                             <a href="https://sabinadams.hashnode.dev" rel="noreferrer" target="_blank"><Hashnode className="w-6 dark:fill-gray-300" /></a>
                             {
                                 isDark ? <Sun onClick={e => toggleTheme('light')} className={`${effect && 'animate-ping'} w-6 fill-yellow-500`} />
-                                    : <Moon onClick={e => toggleTheme('dark')} className={`${effect && 'animate-bounce'} w-6 fill-purple-600 click`} />
+                                    : <Moon onClick={e => toggleTheme('dark')} className={`${effect && 'animate-bounce'} w-6 fill-indigo-800 click`} />
                             }
                         </div>
                     </div>

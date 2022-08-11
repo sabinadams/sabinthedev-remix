@@ -1,0 +1,8 @@
+generates:
+  ./app/models/sanity-generated.ts:
+    schema: https://ou53w5qs.api.sanity.io/v1/graphql/production/default
+    documents: ./app/services/sanity.service.ts
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
