@@ -13,52 +13,6 @@ export type Scalars = {
   Float: number;
   Date: any;
   DateTime: any;
-  JSON: any;
-};
-
-export type Author = Document & {
-  __typename?: 'Author';
-  /** Date the document was created */
-  _createdAt?: Maybe<Scalars['DateTime']>;
-  /** Document ID */
-  _id?: Maybe<Scalars['ID']>;
-  _key?: Maybe<Scalars['String']>;
-  /** Current document revision */
-  _rev?: Maybe<Scalars['String']>;
-  /** Document type */
-  _type?: Maybe<Scalars['String']>;
-  /** Date the document was last modified */
-  _updatedAt?: Maybe<Scalars['DateTime']>;
-  bioRaw?: Maybe<Scalars['JSON']>;
-  image?: Maybe<Image>;
-  name?: Maybe<Scalars['String']>;
-  slug?: Maybe<Slug>;
-};
-
-export type AuthorFilter = {
-  /** Apply filters on document level */
-  _?: InputMaybe<Sanity_DocumentFilter>;
-  _createdAt?: InputMaybe<DatetimeFilter>;
-  _id?: InputMaybe<IdFilter>;
-  _key?: InputMaybe<StringFilter>;
-  _rev?: InputMaybe<StringFilter>;
-  _type?: InputMaybe<StringFilter>;
-  _updatedAt?: InputMaybe<DatetimeFilter>;
-  image?: InputMaybe<ImageFilter>;
-  name?: InputMaybe<StringFilter>;
-  slug?: InputMaybe<SlugFilter>;
-};
-
-export type AuthorSorting = {
-  _createdAt?: InputMaybe<SortOrder>;
-  _id?: InputMaybe<SortOrder>;
-  _key?: InputMaybe<SortOrder>;
-  _rev?: InputMaybe<SortOrder>;
-  _type?: InputMaybe<SortOrder>;
-  _updatedAt?: InputMaybe<SortOrder>;
-  image?: InputMaybe<ImageSorting>;
-  name?: InputMaybe<SortOrder>;
-  slug?: InputMaybe<SlugSorting>;
 };
 
 export type Block = {
@@ -249,21 +203,14 @@ export type IntFilter = {
 
 export type RootQuery = {
   __typename?: 'RootQuery';
-  Author?: Maybe<Author>;
   Document?: Maybe<Document>;
   SanityFileAsset?: Maybe<SanityFileAsset>;
   SanityImageAsset?: Maybe<SanityImageAsset>;
   SpeakingEvent?: Maybe<SpeakingEvent>;
-  allAuthor: Array<Author>;
   allDocument: Array<Document>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
   allSpeakingEvent: Array<SpeakingEvent>;
-};
-
-
-export type RootQueryAuthorArgs = {
-  id: Scalars['ID'];
 };
 
 
@@ -284,14 +231,6 @@ export type RootQuerySanityImageAssetArgs = {
 
 export type RootQuerySpeakingEventArgs = {
   id: Scalars['ID'];
-};
-
-
-export type RootQueryAllAuthorArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  sort?: InputMaybe<Array<AuthorSorting>>;
-  where?: InputMaybe<AuthorFilter>;
 };
 
 
@@ -747,6 +686,7 @@ export type SpeakingEvent = Document & {
   _updatedAt?: Maybe<Scalars['DateTime']>;
   date?: Maybe<Scalars['Date']>;
   description?: Maybe<Scalars['String']>;
+  event?: Maybe<Scalars['String']>;
   image?: Maybe<Image>;
   link?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
@@ -765,6 +705,7 @@ export type SpeakingEventFilter = {
   _updatedAt?: InputMaybe<DatetimeFilter>;
   date?: InputMaybe<DateFilter>;
   description?: InputMaybe<StringFilter>;
+  event?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
   link?: InputMaybe<StringFilter>;
   name?: InputMaybe<StringFilter>;
@@ -780,6 +721,7 @@ export type SpeakingEventSorting = {
   _updatedAt?: InputMaybe<SortOrder>;
   date?: InputMaybe<SortOrder>;
   description?: InputMaybe<SortOrder>;
+  event?: InputMaybe<SortOrder>;
   image?: InputMaybe<ImageSorting>;
   link?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrder>;
@@ -800,7 +742,7 @@ export type StringFilter = {
 export type GetSpeakingEventsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSpeakingEventsQuery = { __typename?: 'RootQuery', allSpeakingEvent: Array<{ __typename?: 'SpeakingEvent', _id?: string | null, name?: string | null, description?: string | null, date?: any | null, tags?: Array<string | null> | null, link?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null }> };
+export type GetSpeakingEventsQuery = { __typename?: 'RootQuery', allSpeakingEvent: Array<{ __typename?: 'SpeakingEvent', _id?: string | null, name?: string | null, description?: string | null, date?: any | null, tags?: Array<string | null> | null, event?: string | null, link?: string | null, image?: { __typename?: 'Image', asset?: { __typename?: 'SanityImageAsset', url?: string | null } | null } | null, slug?: { __typename?: 'Slug', current?: string | null } | null }> };
 
 
-export const GetSpeakingEventsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSpeakingEvents"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allSpeakingEvent"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"asset"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"current"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}}]}}]}}]} as unknown as DocumentNode<GetSpeakingEventsQuery, GetSpeakingEventsQueryVariables>;
+export const GetSpeakingEventsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetSpeakingEvents"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allSpeakingEvent"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"event"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"asset"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"current"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}}]}}]}}]} as unknown as DocumentNode<GetSpeakingEventsQuery, GetSpeakingEventsQueryVariables>;

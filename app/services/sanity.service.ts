@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request'
-import {GetSpeakingEventsQuery } from '../models/sanity-generated'
+import { GetSpeakingEventsQuery } from '../models/sanity-generated'
 import moment from 'moment'
 
 export interface ISpeakingEvents {
@@ -16,6 +16,7 @@ export async function getSpeakingEvents(): Promise<ISpeakingEvents> {
                 description
                 date
                 tags
+                event
                 image {
                     asset {
                         url
@@ -28,12 +29,12 @@ export async function getSpeakingEvents(): Promise<ISpeakingEvents> {
             }
         }
     `;
-    
+
     const graphcms = new GraphQLClient('https://ou53w5qs.api.sanity.io/v1/graphql/production/default')
     const { allSpeakingEvent } = await graphcms.request<GetSpeakingEventsQuery>(SpeakingEventsQuery)
 
-    return { 
-        speakingEvents: allSpeakingEvent.sort( (a,b) => moment(b.date) > moment(a.date) ? 1 : 0), 
-        total: allSpeakingEvent.length 
+    return {
+        speakingEvents: allSpeakingEvent.sort((a, b) => moment(b.date) > moment(a.date) ? 1 : 0),
+        total: allSpeakingEvent.length
     }
 }
