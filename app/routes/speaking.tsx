@@ -3,7 +3,7 @@ import { LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 import { Layout } from '../components/Layout';
 import { SpeakingEvent } from '../components/SpeakingEvent'
 import { SkeletonLoader } from '~/components/SpeakingEventSkeleton';
-import { getSpeakingEvents, ISpeakingEvents } from '../services/sanity.service'
+import { getSpeakingEvents } from '../services/sanity.service'
 import { SpeakingEvent as ISpeakingEvent } from '~/models/sanity-generated';
 import moment from 'moment'
 
@@ -17,7 +17,8 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async () => {
     const { speakingEvents } = await getSpeakingEvents()
 
-    return speakingEvents.reduce((acc: { past: ISpeakingEvent[], upcoming: ISpeakingEvent[] }, curr: ISpeakingEvent) => {
+    return speakingEvents
+    .reduce((acc: { past: ISpeakingEvent[], upcoming: ISpeakingEvent[] }, curr: ISpeakingEvent) => {
         acc[
             moment.utc(curr.date) < moment.utc() ? 'past' : 'upcoming'
         ].push(curr)
@@ -52,7 +53,9 @@ export default function Speaking() {
                     </>}
                     {!upcoming.length || (<div className="px-6 flex flex-col text-left space-y-6">
                         {
-                            upcoming.map((event, i) => <SpeakingEvent key={i} event={event} />)
+                            upcoming
+                            .sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+                            .map((event, i) => <SpeakingEvent key={i} event={event} />)
                         }
                     </div>)}
                     {(!past.length || !upcoming.length) || (<>
@@ -62,7 +65,9 @@ export default function Speaking() {
                     }
                     {!past.length || (<div className="px-6 flex flex-col text-left space-y-6">
                         {
-                            past.map((event, i) => <SpeakingEvent key={i} event={event} />)
+                            past
+                            .sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                            .map((event, i) => <SpeakingEvent key={i} event={event} />)
                         }
                     </div>)}
                 </div>
