@@ -17,30 +17,29 @@ import remix from '@iconify/icons-logos/remix'
 import postgres from '@iconify/icons-logos/postgresql'
 
 export default function Skills() {
-    const skills = {
-        'Prisma': prisma,
-        'React': reactIcon,
-        'GraphQL': graphql,
-        'NestJS': nestjs,
-        'Gatsby': gatsbyIcon,
-        'Tailwind': tailwindcssIcon,
-        'Postgres': postgres,
-        'Vue': vueIcon,
-        'Angular': angularIcon,
-        'Remix': remix,
-        'NodeJS': nodejsIcon,
-        'AWS': awsIcon,
-        'MSSQL': microsoftsqlserverIcon,
-        'MongoDB': fileTypeMongo,
-        'Sass': sassIcon,
-        'ColdFusion': coldfusionIcon
-    }
+    const skills = [
+        prisma,
+        reactIcon,
+        graphql,
+        nestjs,
+        gatsbyIcon,
+        tailwindcssIcon,
+        postgres,
+        vueIcon,
+        angularIcon,
+        remix,
+        nodejsIcon,
+        awsIcon,
+        microsoftsqlserverIcon,
+        fileTypeMongo,
+        coldfusionIcon
+    ]
     return (
-        <div id="skills" className="w-screen px-6 pt-8 md:px-24 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                { Object.entries(skills).map( ([key, value], i) => <Skill key={i} name={key} logo={value}/> ) }
-                <Skill name={'And more!'}/>
+        <div id="skills" className="w-screen px-6 md:px-24 text-center py-4">
+            <div className="flex items-center justify-center space-x-4 space-y-4 flex-wrap">
+                { skills.map( (skill, i) => <Skill key={i} logo={skill}/> ) }
             </div>
+            <h2 className="font-bold text-2xl text-gray-700 dark:text-gray-300 mt-10">... and more!</h2>
         </div>
     )
 }

@@ -54,18 +54,16 @@ export const Navbar: FC = function () {
     return (
         <header className="z-50">
             <nav>
-                <div className="flex mx-0 md:mx-6 px-6 py-2 z-50 justify-between font-semibold text-gray-700">
+                <div className="flex mx-0 md:mx-6 px-6 py-2 z-50 justify-between font-semibold text-gray-700 h-50">
                     <Link to="/"><Logo className="h-16 w-16 md:h-28 md:w-28 cursor-pointer dark:fill-emerald-300" /></Link>
                     <div className="hidden md:flex flex-grow justify-between items-center py-2 z-50 font-semibold text-gray-700 dark:text-gray-300">
                         <div className="flex flex-grow justify-center items-center gap-10 w-8/12">
                             {
                                 location.pathname !== '/' ? <>
                                     <Link className="cursor-pointer" to="/">About</Link>
-                                    <Link className="cursor-pointer" to="/#services">Services</Link>
                                     <Link className="cursor-pointer" to="/#contact">Contact</Link>
                                 </> : <>
                                     <a className="cursor-pointer" onClick={() => scrollToSection('about')}>About</a>
-                                    <a className="cursor-pointer" onClick={() => scrollToSection('services')}>Services</a>
                                     <a className="cursor-pointer" onClick={() => scrollToSection('contact')}>Contact</a>
                                 </>
                             }
@@ -109,13 +107,11 @@ export const Navbar: FC = function () {
                             location.pathname !== '/' ? <>
                                 <li className="mb-4"><Link className="cursor-pointer" to="/">About</Link></li>
                                 <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
-                                <li className="my-4"><Link className="cursor-pointer" to="/#services">Services</Link></li>
                                 <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-4"><Link className="cursor-pointer" to="/#contact">Contact</Link></li>
                             </> : <>
                                 <li className="mb-4"><a className="cursor-pointer" onClick={() => scrollToSection('about')}>About</a></li>
                                 <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
-                                <li className="my-4"><a className="cursor-pointer" onClick={() => scrollToSection('services')}>Services</a></li>
                                 <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                                 <li className="my-5"><a className="cursor-pointer" onClick={() => scrollToSection('contact')}>Contact</a></li>
                             </>
