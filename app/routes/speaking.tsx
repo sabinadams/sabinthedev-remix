@@ -32,13 +32,13 @@ export default function Speaking() {
 
     return (
         <Layout showShape={false}>
-            <div className="m-auto text-center w-full px-8 md:w-2/4 md:px-0">
+            <div className="m-auto text-center w-full px-8 md:w-3/5 md:px-0">
                 <div className="md:text-left text-center ">
                     <h2 className="text-gray-700 dark:text-gray-300 text-7xl font-extrabold">Speaking</h2>
                     <p className="text-gray-700 dark:text-gray-300 text-xl mt-4 ">Events both online and offline I've spoken at</p>
                 </div>
                 <br /><br />
-                <div className="flex flex-col text-left space-y-6">
+                <div className="flex flex-col text-left space-y-10">
                     {
                         (!past.length && !upcoming.length) && (<>
                             <SkeletonLoader />
@@ -46,23 +46,25 @@ export default function Speaking() {
                             <SkeletonLoader />
                         </>)
                     }
-                    {!upcoming.length || (<>
+                    {!upcoming.length || <>
                         <h3 className="text-gray-700 dark:text-gray-300 font-bold text-3xl text-bl">Upcoming</h3>
-                        <hr className='-translate-y-4 border-2 margin-0 rounded-xl border-gray-700 dark:border-gray-300 opacity-50' />
+                        <hr className='-translate-y-4 border-2 margin-0 rounded-xl border-gray-700 opacity-50' />
+                    </>}
+                    {!upcoming.length || (<div className="px-6 flex flex-col text-left space-y-6">
                         {
                             upcoming.map((event, i) => <SpeakingEvent key={i} event={event} />)
                         }
-                    </>)}
+                    </div>)}
                     {(!past.length || !upcoming.length) || (<>
                         <h3 className="text-gray-700 dark:text-gray-300 font-bold text-3xl text-bl">Past</h3>
-                        <hr className='-translate-y-4 border-2 margin-0 rounded-xl border-gray-700 dark:border-gray-300 opacity-50' />
+                        <hr className='-translate-y-4 border-2 margin-0 rounded-xl border-gray-700 opacity-50' />
                     </>)
                     }
-                    {!past.length || (<>
+                    {!past.length || (<div className="px-6 flex flex-col text-left space-y-6">
                         {
                             past.map((event, i) => <SpeakingEvent key={i} event={event} />)
                         }
-                    </>)}
+                    </div>)}
                 </div>
             </div>
         </Layout>

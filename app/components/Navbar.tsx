@@ -122,7 +122,7 @@ export const Navbar: FC = function () {
                         }
                         <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                         <li className="my-4">
-                            <Link to="/blog">Blog</Link>
+                            <Link to="/blog">Writing</Link>
                         </li>
                         <hr className="border-1 opacity-5 dark:border-gray-300 border-gray-100 rounded-xl" />
                         <li className="my-4">

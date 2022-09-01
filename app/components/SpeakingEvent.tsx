@@ -4,13 +4,13 @@ import LinkChain from '@iconify/icons-akar-icons/link-chain'
 import { Icon } from '@iconify/react'
 
 export const SpeakingEvent = ({ event }: { event: ISpeakingEvents['speakingEvents'][0] }) => {
-    return <div className="text-gray-700 dark:text-gray-300 transition ease-in-out duration-300 transform hover:-translate-y-2 flex flex-col space-y-4">
+    return <div className="text-gray-700 dark:text-gray-300 transition ease-in-out duration-300 transform hover:-translate-y-2 flex flex-col space-y-2  ">
         <a
-            className={"font-extrabold text-2xl flex items-center"}
+            className={`font-extrabold text-2xl flex items-center relative`}
             target={event.link ? '_blank' : '_self'}
             href={event.link || 'javascript:;'}
         >
-            {event.link && <Icon icon={LinkChain} className="w-5 h-5 inline mr-2" />}
+            {event.link && <Icon icon={LinkChain} className="w-5 h-5 absolute -translate-x-8 " />}
             {event.name}
         </a>
 

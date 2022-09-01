@@ -1,10 +1,10 @@
 {
-  "version": "86987532",
+  "version": "b68747cb",
   "entry": {
-    "module": "/build/entry.client-7O2MR7DK.js",
+    "module": "/build/entry.client-6LKLN7JT.js",
     "imports": [
-      "/build/_shared/chunk-TQTCJPEN.js",
-      "/build/_shared/chunk-Y5I6LAOS.js",
+      "/build/_shared/chunk-CBEYE77S.js",
+      "/build/_shared/chunk-IKIJUFHQ.js",
       "/build/_shared/chunk-5OQ3QANQ.js"
     ]
   },
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-MVIHHFP5.js",
+      "module": "/build/root-ZCKNJQB3.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -46,10 +46,10 @@
       "id": "routes/blog",
       "parentId": "root",
       "path": "blog",
-      "module": "/build/routes/blog-J5UWLJOS.js",
+      "module": "/build/routes/blog-PUTCCDJU.js",
       "imports": [
-        "/build/_shared/chunk-TBFDMDT4.js",
-        "/build/_shared/chunk-P4B5GQSC.js",
+        "/build/_shared/chunk-AIC7UR5C.js",
+        "/build/_shared/chunk-I5BFLCW7.js",
         "/build/_shared/chunk-GT2V64AT.js"
       ],
       "hasAction": false,
@@ -61,12 +61,12 @@
       "id": "routes/blog.$slug",
       "parentId": "root",
       "path": "blog/:slug",
-      "module": "/build/routes/blog.$slug-XJOMXIDJ.js",
+      "module": "/build/routes/blog.$slug-7ERR4RBM.js",
       "imports": [
-        "/build/_shared/chunk-TBFDMDT4.js",
+        "/build/_shared/chunk-AIC7UR5C.js",
         "/build/_shared/chunk-ANQQXGRR.js",
-        "/build/_shared/chunk-UUKVQWR4.js",
-        "/build/_shared/chunk-P4B5GQSC.js",
+        "/build/_shared/chunk-RJ7C5Z6D.js",
+        "/build/_shared/chunk-I5BFLCW7.js",
         "/build/_shared/chunk-GT2V64AT.js"
       ],
       "hasAction": false,
@@ -78,10 +78,10 @@
       "id": "routes/blog.getpreviews",
       "parentId": "root",
       "path": "blog/getpreviews",
-      "module": "/build/routes/blog.getpreviews-C4NTDVJA.js",
+      "module": "/build/routes/blog.getpreviews-P7GCXTFN.js",
       "imports": [
         "/build/_shared/chunk-ANQQXGRR.js",
-        "/build/_shared/chunk-UUKVQWR4.js"
+        "/build/_shared/chunk-RJ7C5Z6D.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -92,9 +92,9 @@
       "id": "routes/contact-form",
       "parentId": "root",
       "path": "contact-form",
-      "module": "/build/routes/contact-form-TKLBDPU6.js",
+      "module": "/build/routes/contact-form-RKQU5DKN.js",
       "imports": [
-        "/build/_shared/chunk-UUKVQWR4.js"
+        "/build/_shared/chunk-RJ7C5Z6D.js"
       ],
       "hasAction": true,
       "hasLoader": false,
@@ -105,10 +105,10 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-YCDGJLG6.js",
+      "module": "/build/routes/index-7NLAVRCP.js",
       "imports": [
-        "/build/_shared/chunk-GDXVY2EQ.js",
-        "/build/_shared/chunk-P4B5GQSC.js"
+        "/build/_shared/chunk-6KSDRXZY.js",
+        "/build/_shared/chunk-I5BFLCW7.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -119,10 +119,10 @@
       "id": "routes/speaking",
       "parentId": "root",
       "path": "speaking",
-      "module": "/build/routes/speaking-IQJG54PY.js",
+      "module": "/build/routes/speaking-EWPDZA57.js",
       "imports": [
-        "/build/_shared/chunk-GDXVY2EQ.js",
-        "/build/_shared/chunk-P4B5GQSC.js",
+        "/build/_shared/chunk-6KSDRXZY.js",
+        "/build/_shared/chunk-I5BFLCW7.js",
         "/build/_shared/chunk-GT2V64AT.js"
       ],
       "hasAction": false,
@@ -131,5 +131,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-86987532.js"
+  "url": "/build/manifest-B68747CB.js"
 }
