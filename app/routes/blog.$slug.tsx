@@ -7,17 +7,17 @@ import moment from 'moment'
 import { BlogPost } from '~/models/Hashnode'
 
 export const meta: MetaFunction = ({ data }: { data: BlogPost }) => {
-    return {
-      image: data?.coverImage,
-      title: data?.title,
-      description: data?.brief,
-      "twitter:image": data?.coverImage,
-      "twitter:card": "summary_large_image",
-      "twitter:creator": "@sabinthedev",
-      "twitter:site": "@sabinthedev",
-      "twitter:title": data?.title,
-      "twitter:description": data?.brief
-    }
+  return {
+    image: data?.coverImage,
+    title: data?.title,
+    description: data?.brief,
+    "twitter:image": data?.coverImage,
+    "twitter:card": "summary_large_image",
+    "twitter:creator": "@sabinthedev",
+    "twitter:site": "@sabinthedev",
+    "twitter:title": data?.title,
+    "twitter:description": data?.brief
+  }
 }
 
 export let loader: LoaderFunction = async ({ params }) => {
@@ -32,7 +32,7 @@ export default function Blog() {
     //@ts-ignore
     window.Prism.highlightAll()
   }, [post])
- 
+
   return (
     <BlogLayout>
       <article
@@ -42,7 +42,7 @@ export default function Blog() {
       >
         <header className="text-left">
           <img src={post.coverImage} />
-          <h1 itemProp="headline" className="text-4xl font-bold text-blue-900 dark:text-emerald-300 my-4">{post.title}</h1>
+          <h1 itemProp="headline" className="text-4xl font-bold text-gray-700 dark:text-gray-300 my-4">{post.title}</h1>
           <p className="dark:text-gray-500">{moment.utc(post.addedDate).format('MMM Do YYYY')}</p>
         </header>
         <section
@@ -50,8 +50,8 @@ export default function Blog() {
           itemProp="articleBody"
         />
       </article>
-      <hr className="mb-10"/>
-      <Bio/>
+      <hr className="mb-10" />
+      <Bio />
     </BlogLayout>
   )
 }

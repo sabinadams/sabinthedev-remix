@@ -1,15 +1,12 @@
 import { Layout } from '~/components/Layout'
 import About from '~/components/About'
-import Skills from '~/components/Skills'
 import Contact from '~/components/Contact'
 
 export default function Index() {
   return (
     <Layout>
       {/* About */}
-      <About/>
-      {/* Skills */}
-      <Skills />
+      <About />
       {/* Contact Me */}
       <Contact />
       {/* Footer */}
